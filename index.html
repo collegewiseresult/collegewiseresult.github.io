@@ -9,50 +9,76 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
         }
         h1 {
             color: #007bff;
             text-align: center;
+            margin-top: 20px;
+        }
+        .content {
+            margin: auto;
+            max-width: 500px;
+            padding: 20px;
         }
         p {
+            color: #333;
+            font-size: medium;
+            text-align: justify;
+        }
+        .instruction {
             text-align: center;
+            font-size: 1.5em;
             margin-top: 20px;
-            font-size: 1.2em;
-            color: #333;
         }
-        .notice {
+        .box-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            margin-top: 20px;
+        }
+        .box-body {
+            background-color: beige;
+            padding: 10px;
+            border-radius: 0 0 5px 5px;
+        }
+        .link-button {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #333;
             background-color: #f7f7f7;
-            padding: 20px;
-            margin: 20px;
-            border-left: 5px solid #007bff;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
-        .notice h2 {
-            color: #007bff;
-        }
-        .notice p {
-            color: #333;
+        .link-button:hover {
+            background-color: #ddd;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Collegewise Result for National University of Bangladesh</h1>
-        <p>Please click the appropriate link to see college-wise result.</p>
+    <h1>Collegewise Result for National University of Bangladesh</h1>
+    <div class="content">
+        <p class="instruction">Please click appropriate link to see college-wise result</p>
         <p>Collegewise results are usually uploaded within one week of publication of individual result.</p>
-    </div>
-    <div class="notice">
-        <h2>Important Notice</h2>
-        <p>This is an important notice. Please read it carefully.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan tempor nunc, nec elementum magna ullamcorper vel.</p>
+        <div class="box-header">Honours</div>
+        <div class="box-body">
+            <a href="hon_first_year.html" class="link-button">First Year</a>
+            <a href="hon_second_year.html" class="link-button">Second Year</a>
+            <a href="hon_third_year.html" class="link-button">Third Year</a>
+            <a href="hon_fourth_year.html" class="link-button">Fourth Year</a>
+        </div>
+        <hr>
+        <div class="box-header">Masters</div>
+        <div class="box-body">
+            <a href="mas_final.html" class="link-button">Masters Final</a>
+        </div>
+        <p>This website is NOT affiliated with National University of Bangladesh. It's a personal website built solely for the purpose of viewing collegewise result.</p>
     </div>
 </body>
 </html>
