@@ -7,4 +7,4 @@ It's very hard to view college-wise result on The University's official webpage 
 Purpose of the git is to help student view college-wise result easily without memorizing sub/college codes.
 
 Please note that this git is unofficial and I am by no means affiliated with national university.
-I can be reached @ i.never.read.mails@gmail.com
+
