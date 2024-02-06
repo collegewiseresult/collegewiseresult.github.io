@@ -1,0 +1,257 @@
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Phil's পার্সোনালিটি টেস্ট</title>
+<style>
+* {
+	font-family:  "SolaimanLipi","Siyam Rupali";
+}
+body {
+    box-sizing: inline;
+	background-color:azure;
+}
+h1 {
+	text-align:center;
+	margin:auto;
+	padding:2%;
+	
+	background-color:rgb(55, 111, 255);
+	border-radius:5px;
+	color:white;
+	hight:auto;
+}
+.container {
+	max-width:600px;
+	background-color:rgb(222, 230, 250);
+	padding:10px;
+	margin:auto;
+}
+.qlabel {
+  padding-left: 5px;
+  display: inline-block;
+  background-color: rgb(117,155,253);
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0px 0px;
+  font-size: 1.2em;
+}
+button {
+	margin-top:10px;
+	padding:16px 5px;
+	display:block;
+	background-color:rgb(102, 204, 255);	
+	margin:auto;
+	width:50%;
+	border:none;
+	font-size:20px;
+	border-radius:10px;
+}
+button:focus {
+	background-color: rgb(70, 136, 83);
+}
+button:hover {
+	background-color: rgb(97, 202, 54);
+}
+.question {
+	max-width:100%;
+	margin:10px;
+	display:block;
+	background-color:rgb(193,209,250)  ;
+	border-radius: 5px 5px 0px 0px ;
+	box-sizing:border-box;
+}
+.score {
+	background-color:rgb(117, 155, 253);
+	border-radius: 5px 5px 0px 0px ;
+	font-size:1.2em;
+	text-align:center;
+}
+.comment {
+	background-color:rgb(164, 189, 252);
+	font-size:1.4em;
+	text-align:center;
+	font-color:blue;
+	font-size:1.5em;
+	border-radius:5px;
+	padding:4px;
+}
+.question input[type="radio"] {
+	display:none;
+}
+.question input[type="radio"]:checked+label{
+	background-color:rgb(201, 255, 189); 
+	font-style:italic;
+}
+label {
+  display: inline-block;
+  background-color: rgb(193,209,250);
+  padding: 4px 11px;
+  border: 1px solid rgb(117,155,253);
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  width:100%;
+}
+</style>
+
+<script>
+function hide (elements) {
+elements=elements.length ? elements : [elements];
+for (var index=0; index <elements.length; index++) {
+elements[index].style.display='none';
+}
+}
+
+function showResult(){
+try {
+var output= +document.querySelector('input[name=ques1]:checked').value +
+		+document.querySelector('input[name=ques2]:checked').value +
+		+document.querySelector('input[name=ques3]:checked').value +
+		+document.querySelector('input[name=ques4]:checked').value +
+		+document.querySelector('input[name=ques5]:checked').value +
+		+document.querySelector('input[name=ques6]:checked').value +
+		+document.querySelector('input[name=ques7]:checked').value +
+		+document.querySelector('input[name=ques8]:checked').value +
+		+document.querySelector('input[name=ques9]:checked').value +
+		+document.querySelector('input[name=ques10]:checked').value ;
+
+<!-- hide all questions and header -->
+hide (document.querySelectorAll('.header'))
+hide (document.querySelectorAll('.question'))
+document.getElementById('btnHolder').style.display='none';
+
+document.getElementById("score").innerText=" আপনার দেওয়া উত্তর অনুসারে আপনার স্কোর: " + output;
+if (output<21)
+        document.getElementById("comment").innerText = "অন্যরা জানবে আপনি অনেক লাজুক, নার্ভাস, সবসময় সিদ্ধান্তহীনতায় ভোগেন।";
+      else   if (output>=21 && output<=30)
+        document.getElementById("comment").innerText = "অন্যরা জানবে আপনি বিরক্তিকর এবং ব্যস্ত। আপনাকে সবাই অত্যন্ত কৌশলী বলেই জানবে। আপনি প্রতিভাবান নন, কিন্তু উদ্যমী।";
+     else   if (output>=31 && output<=40)
+        document.getElementById("comment").innerText = "অন্যরা জানবে আপনি বিচক্ষন, সতর্ক, যত্নশীল, বাস্তববাদী, চালাক, মেধাবী এবং বিনয়ী। আপনার সাথেই সহজে একজন বন্ধুত্ব করে ফেলবে। আপনি সহজেই কাউকে বিশ্বাস করে ফেলবেন, কিন্তু কেউ আপনার বিশ্বাস ভাঙলে তাঁকে আর কখনোই বিশ্বাস করতে পারবেন না।";
+     else   if (output>41 && output<=50)
+        document.getElementById("comment").innerText = "অন্যরা জানবে আপনি সতেজ, জীবনঘনিষ্ঠ, সুন্দর, বাস্তববাদী একজন মানুষ। আপনি দয়ালু, সুবিবেচক, মানুষকে সাহায্য করতে পছন্দ করেন।";
+	 else   if (output>51 && output<=60)
+        document.getElementById("comment").innerText = "অন্যরা জানবে আপনি একজন আকর্ষণীয়, প্রাণবন্ত, আবেগী, ব্যক্তিত্বসম্পন্ন, দলনেতা, দূরদর্শী, যেকোনো কিছুর সিদ্ধান্ত অনেক তাড়াতাড়ি নিতে পারেন, সেটা ভুল হোক আর ঠিক হোক। আপনি সাহসী, adventure প্রিয়, আপনার সঙ্গ পেতে সবাই পছন্দ করবে।";
+	 else if (output>60)
+		document.getElementById("comment").innerText="অন্যরা জানবে আপনি আত্মকেন্দ্রিক, আপনি ডমিন্যান্ট করতে পছন্দ করেন। আপনি প্রশংসিত হবেন, কিন্তু সবসময় বিশ্বাসযোগ্য হবেন না। আপনার সাথে কেউ ঘনিষ্ঠ হতে অনেক দ্বিধায় ভুগবে।";
+
+<!-- show result div -->
+document.getElementById('resultDiv').style.display='block';
+
+}
+catch(err)		 {
+alert("Please answer all the questions." + String.fromCharCode(10) + "অনুগ্রহপূর্বক সব প্রশ্নের উত্তর দিন।")
+}
+}
+</script>
+
+</head>
+<body>
+<div class="container">
+<div class="header">
+  <h1> ডক্টর ফিলস টেস্ট </h1>
+  <p style="font-size:1.2em; padding:5px;"> ডক্টর ফিল'স টেস্টের মাধ্যমে আপনি আপনার ব্যাক্তিসত্ত্বা সম্পর্কে ধারণা পেতে পারেন। এ টেস্টে ১০ টি প্রশ্ন রয়েছে। <br> প্রত্যেকটি প্রশ্নের উত্তর দেওয়ার পর 'ফলাফল' বাটনে ক্লিক করুন।</p>
+</div>
+
+<div class="question">
+	<label class="qlabel" for="question1"> ১। আপনি কোন সময়ে নিজেকে সবচেয়ে সুখী অনুভব করেন? </label> <br>
+		<input type="radio" id="q1o1" name="ques1" value="2"> <label for="q1o1"> ক) সকালে </label> <br>
+		<input type="radio" id="q1o2" name="ques1" value="4"> <label for="q1o2"> খ) বিকাল ও সন্ধ্যার মাঝামাঝি সময়ে </label> <br>
+		<input type="radio" id="q1o3" name="ques1" value="6"> <label for="q1o3"> গ) মধ্যরাতে। </label> <br>
+</div>
+
+<div class="question">
+	<label class="qlabel" for="question2"> ২। আপনি সাধারণত কীভাবে হাঁটেন? </label> <br>
+		<input type="radio" id="q2o1" name="ques2" value="6"><label for="q2o1"> ক) দ্রুত, বড় বড় পায়ে। </label> <br>
+		<input type="radio" id="q2o2" name="ques2" value="4"><label for="q2o2"> খ) দ্রুত, ছোট ছোট পায়ে। </label> <br>
+		<input type="radio" id="q2o3" name="ques2" value="7"><label for="q2o3"> গ কম দ্রুত, মাথা উঁচু করে চারপাশের প্রকৃতি দেখে।</label> <br>
+		<input type="radio" id="q2o4" name="ques2" value="2"><label for="q2o4"> ঘ) কম দ্রুত, মাথা নিচু করে। </label> <br>
+		<input type="radio" id="q2o5" name="ques2" value="1"><label for="q2o5"> ঙ) খুবই আস্তে।</label> <br>
+</div>
+
+<div class="question">
+	<label class="qlabel" for="question3">৩। আপনি কারো সঙ্গে কথা বলার সময়-</label> <br>
+		<input type="radio" id="q3o1" name="ques3" value="4"><label for="q3o1">ক) দুই হাত বুকের উপর গুটিয়ে রাখেন।</label> <br>
+		<input type="radio" id="q3o2" name="ques3" value="2"><label for="q3o2">খ) দুই হাত হ্যান্ডশেক এর মতো করে বা মুষ্টিবদ্ধ করে রাখেন।</label> <br>
+		<input type="radio" id="q3o3" name="ques3" value="5"><label for="q3o3">গ) একহাত বা দুই হাত আপনার হিপে রেখে বা পকেটে ঢুকিয়ে রাখেন।</label> <br>
+		<input type="radio" id="q3o4" name="ques3" value="7"><label for="q3o4">ঘ) যার সাথে কথা বলছেন, তাঁকে স্পর্শ করে কথা বলেন।</label> <br>
+		<input type="radio" id="q3o5" name="ques3" value="6"><label for="q3o5">ঙ) আপনার হাত দিয়ে আপনার কান, ত্বক বা মাথায় স্পর্শ করে কথা বলেন।</label> <br>
+</div>
+
+<div class="question">
+	<label class="qlabel" for="question4">৪। আপনি যখন বিশ্রাম নেন, তখন যেভাবে বসে থাকেন-</label> <br>
+		<input type="radio" id="q4o1" name="ques4" value="4"><label for="q4o1">ক) দুই হাঁটু ভাজ করে মুখের সামনে এনে বসেন।</label> <br>
+		<input type="radio" id="q4o2" name="ques4" value="6"><label for="q4o2">খ) দুই পা কোনাকোনিভাবে মাটিতে রেখে বসেন।</label> <br>
+		<input type="radio" id="q4o3" name="ques4" value="2"><label for="q4o3">গ) পা দুটো সোজা সামনের দিকে দিয়ে বসেন।</label> <br>
+		<input type="radio" id="q4o4" name="ques4" value="1"><label for="q4o4">ঘ) এক পা ভাজ করে অন্য পা সোজা করে বসেন।</label> <br>
+</div>
+
+<div class="question">
+	<label class="qlabel" for="question5">৫। যখন কোনো কিছু আপনাকে সত্যিকারের আনন্দ দেয়, তখন আপনি</label> <br>
+		<input type="radio" id="q5o1" name="ques5" value="6"><label for="q5o1">ক) জোরে হাসি দিয়ে স্বাগত জানান।</label> <br>
+		<input type="radio" id="q5o2" name="ques5" value="4"><label for="q5o2">খ) অল্প শব্দ করে হাসি দেন।</label> <br>
+		<input type="radio" id="q5o3" name="ques5" value="3"><label for="q5o3">গ) আপনি নীরব থাকেন</label> <br>
+		<input type="radio" id="q5o4" name="ques5" value="5"><label for="q5o4">ঘ) মুচকি হাসি দেন।</label> <br>
+</div>
+
+<div class="question">
+	<label class="qlabel" for="question6">৬। আপনি যখন কোনো পার্টিতে উপস্থিত হন, তখন,</label> <br>
+		<input type="radio" id="q6o1" name="ques6" value="6"><label for="q6o1">ক) সবাইকে ওয়েলকাম করে ভিতরে প্রবেশ করেন।</label> <br>
+		<input type="radio" id="q6o2" name="ques6" value="4"><label for="q6o2">খ) নীরবে প্রবেশ করেন, এবং পরিচিত কাউকে খোঁজেন।</label> <br>
+		<input type="radio" id="q6o3" name="ques6" value="2"><label for="q6o3">গ) নীরবে প্রবেশ করে এক কোনায় একা দাঁড়িয়ে থাকতে পছন্দ করেন।</label> <br>
+</div>
+
+<div class="question">
+	<label class="qlabel" for="question7">৭। আপনি কোনো কাজে অনেক বেশি মগ্ন, হঠাৎ কেউ আপনাকে নক করলে,</label><br>
+		<input type="radio" id="q7o1" name="ques7" value="6"><label for="q7o1">ক) আপনি তাকে স্বাগত জানান।</label> <br>
+		<input type="radio" id="q7o2" name="ques7" value="2"><label for="q7o2">খ) আপনি খুবই রেগে যান</label> <br>
+		<input type="radio" id="q7o3" name="ques7" value="4"><label for="q7o3">গ) মাঝে মাঝে স্বাগত জানান, মাঝে মাঝে রেগে যান।</label> <br>
+</div>
+
+<div class="question">
+	<label class="qlabel" for="question8">৮। আপনার পছদের রঙ কোনটি?</label><br>
+		<input type="radio" id="q8o1" name="ques8" value="6"><label for="q8o1">ক) লাল অথবা কমলা</label> <br>
+		<input type="radio" id="q8o2" name="ques8" value="7"><label for="q8o2">খ) কালো</label> <br>
+		<input type="radio" id="q8o3" name="ques8" value="5"><label for="q8o3">গ) হলুদ অথবা হালকা নীল।</label> <br>
+		<input type="radio" id="q8o4" name="ques8" value="4"><label for="q8o4">ঘ) সবুজ</label> <br>
+		<input type="radio" id="q8o5" name="ques8" value="3"><label for="q8o5">ঙ) গাঢ় নীল অথবা বেগুনী</label> <br>
+		<input type="radio" id="q8o6" name="ques8" value="2"><label for="q8o6">চ) ধূসর অথবা বাদামী।</label> <br>
+</div>
+
+<div class="question">
+	<label class="qlabel" for="question9">৯। রাতে ঘুমানোর আগে আপনি কীভাবে বিছানায় শুয়ে থাকেন?</label> <br>
+		<input type="radio" id="q9o1" name="ques9" value="7"><label for="q9o1">ক) সোজা হয়ে।</label> <br>
+		<input type="radio" id="q9o2" name="ques9" value="6"><label for="q9o2">খ) উপুর হয়ে।</label> <br>
+		<input type="radio" id="q9o3" name="ques9" value="4"><label for="q9o3">গ) একপাশে কাত হয়ে।</label> <br>
+		<input type="radio" id="q9o4" name="ques9" value="2"><label for="q9o4">ঘ) একহাতের উপর মাথা রেখে।</label> <br>
+		<input type="radio" id="q9o5" name="ques9" value="1"><label for="q9o5">ঙ) মাথা বালিশের নিচে রেখে।</label> <br>
+</div>
+
+<div class="question">
+	<label class="qlabel" for="question10">১০। আপনি প্রায়ই কীরকম স্বপ্ন দেখেন?</label> <br>
+		<input type="radio" id="q10o1" name="ques10" value="4"><label for="q10o1">ক) আপনি কোনো কিছু থেকে পড়ে যাচ্ছেন।</label> <br>
+		<input type="radio" id="q10o2" name="ques10" value="2"><label for="q10o2">খ) আপনি কারো সাথে মারামারি করছেন বা পালিয়ে বেড়াচ্ছেন।</label> <br>
+		<input type="radio" id="q10o3" name="ques10" value="3"><label for="q10o3">গ) আপনি কাউকে খুঁজছেন।</label> <br>
+		<input type="radio" id="q10o4" name="ques10" value="5"><label for="q10o4">ঘ) আপনি উড়ছেন বা ভাসছেন।</label> <br>
+		<input type="radio" id="q10o5" name="ques10" value="6"><label for="q10o5">ঙ) আপনি স্বপ্ন দেখেন না বললেই চলে।</label> <br>
+		<input type="radio" id="q10o6" name="ques10" value="1"><label for="q10o6">চ। আপনি সবসময় আনন্দের স্বপ্ন দেখেন।</label> <br>
+</div>
+
+<div id="btnHolder">
+<br>
+<button id="btnShowResult" onclick="showResult()"> ফলাফল দেখান </button>
+</div>
+
+<div style="display:none;" id="resultDiv">
+	<h1>ডক্টর ফিলস টেস্ট </h1>
+	<p style="margin-bottom:0px; " class="score" id="score">this is a test</p>
+	
+		<p style="margin-top:0px;" class="comment"  id="comment">আমার সোনার বাঙলা আমি তোমায় ভালবাসি</p> <br>
+		
+	<button onclick="location.reload()">আবার টেস্ট দিন</button>
+</div>
+
+<p style="text-align:center; background-color:azure; clear:both;">স্বত্ত্ব সংরক্ষিত: মো: মেহেদী হাসান</p>
+
+</div>
+</body>
+</html>
